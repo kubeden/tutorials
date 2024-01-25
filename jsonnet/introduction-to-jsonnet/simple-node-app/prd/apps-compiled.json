@@ -1,0 +1,109 @@
+{
+   "apiVersion": "v1",
+   "items": [
+      {
+         "apiVersion": "apps/v1",
+         "kind": "Deployment",
+         "metadata": {
+            "labels": {
+               "app": "simple-node-app"
+            },
+            "name": "simple-node-app-deployment"
+         },
+         "spec": {
+            "replicas": 3,
+            "selector": {
+               "matchLabels": {
+                  "app": "simple-node-app"
+               }
+            },
+            "template": {
+               "metadata": {
+                  "labels": {
+                     "app": "simple-node-app"
+                  }
+               },
+               "spec": {
+                  "containers": [
+                     {
+                        "env": [
+                           {
+                              "name": "NODE_ENV",
+                              "value": "production"
+                           },
+                           {
+                              "name": "PORT",
+                              "value": "8080"
+                           }
+                        ],
+                        "image": "docker.io/hello-world:latest",
+                        "name": "simple-node-app",
+                        "ports": [
+                           {
+                              "containerPort": 8080
+                           }
+                        ]
+                     }
+                  ]
+               }
+            }
+         }
+      },
+      {
+         "apiVersion": "networking.k8s.io/v1",
+         "kind": "Ingress",
+         "metadata": {
+            "annotations": {
+               "nginx.ingress.kubernetes.io/rewrite-target": "/"
+            },
+            "name": "simple-node-app-ingress"
+         },
+         "spec": {
+            "rules": [
+               {
+                  "host": "simple-node-appprd.example.com",
+                  "http": {
+                     "paths": [
+                        {
+                           "backend": {
+                              "service": {
+                                 "name": "simple-node-app-service",
+                                 "port": {
+                                    "number": 8080
+                                 }
+                              }
+                           },
+                           "path": "/",
+                           "pathType": "Prefix"
+                        }
+                     ]
+                  }
+               }
+            ]
+         }
+      },
+      {
+         "apiVersion": "v1",
+         "kind": "Service",
+         "metadata": {
+            "labels": {
+               "app": "simple-node-app"
+            },
+            "name": "simple-node-app-service"
+         },
+         "spec": {
+            "ports": [
+               {
+                  "port": 80,
+                  "targetPort": 8080
+               }
+            ],
+            "selector": {
+               "app": "simple-node-app"
+            },
+            "type": "ClusterIP"
+         }
+      }
+   ],
+   "kind": "List"
+}
