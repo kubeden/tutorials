@@ -20,7 +20,7 @@ We'll demonstrate Jsonnet's capabilities through a practical example: deploying 
 - */libs/deployment.libsonnet*: Defines a basic deployment template.
 - */libs/ingress.libsonnet*: Sets up an ingress for our application.
 - */libs/service.libsonnet*: Contains templates for ClusterIP and LoadBalancer services.
-- */someApplication/dev/apps.jsonnet & /someApplication/prd/apps.jsonnet*: Application-specific deployment configurations for different environments (development and production).
+- */jsonnet-syntax/dev/apps.jsonnet & /jsonnet-syntax/prd/apps.jsonnet*: Application-specific deployment configurations for different environments (development and production).
 - *parameters.libsonnet*: Holds parameters for our application, such as app name, environment, and image tags.
 
 ## Step 0: Sharing my way of structuring a Jsonnet project
@@ -98,7 +98,7 @@ If you look in all three libary files, you'll notice that passing parameters is 
 }
 ```
 
-In **'/someApplication/prd/parameters.libsonnet'**, we define our application parameters:
+In **'/jsonnet-syntax/prd/parameters.libsonnet'**, we define our application parameters:
 
 ```
 {
@@ -114,7 +114,7 @@ These parameters are passed to our deployment templates to generate environment-
 
 ## Step 3: Generating Configuration Files
 
-The /someApplication/prd/apps.jsonnet file combines our templates and parameters:
+The /jsonnet-syntax/prd/apps.jsonnet file combines our templates and parameters:
 
 ```
 local deployment = import '../../libs/deployment.libsonnet';
@@ -138,21 +138,21 @@ Here, we import our templates and parameters, then use them to define a complete
 To generate the JSON/YAML configurations from Jsonnet templates, you'll use the Jsonnet command-line tool. For example:
 
 ```
-jsonnet /someApplication/prd/apps.jsonnet
+jsonnet /jsonnet-syntax/prd/apps.jsonnet
 
 or respectively
 
-jsonnet /someApplication/dev/apps.jsonnet
+jsonnet /jsonnet-syntax/dev/apps.jsonnet
 ```
 
 Or if you want to generate YAML:
 
 ```
-jsonnet -o yaml /someApplication/prd/apps.jsonnet
+jsonnet -o yaml /jsonnet-syntax/prd/apps.jsonnet
 
 or respectively
 
-jsonnet -o yaml /someApplication/dev/apps.jsonnet
+jsonnet -o yaml /jsonnet-syntax/dev/apps.jsonnet
 ```
 
 ## Conclusion
