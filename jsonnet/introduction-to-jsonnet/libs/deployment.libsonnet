@@ -64,7 +64,7 @@
           containers: [
             {
               name: p.appName,
-              image: 'somContainerRegistry/' + p.appName + ':' + p.imageTag,
+              image: 'docker.io/hello-world' + ':' + p.imageTag,
               ports: [
                 {
                   containerPort: p.port
