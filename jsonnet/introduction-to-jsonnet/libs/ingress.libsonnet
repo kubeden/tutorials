@@ -10,6 +10,7 @@
       },
     },
     spec: {
+      ingressClassName: "nginx",
       rules: [
         {
           host: p.appName + p.environment + '.denctl.com',
@@ -22,13 +23,21 @@
                   service: {
                     name: p.appName + '-service',
                     port: {
-                      number: p.port
+                      number: p.ingressPort
                     }
                   }
                 }
               }
             ]
           }
+        }
+      ],
+      tls: [
+        {
+          hosts: [
+            p.appName + p.environment + '.denctl.com'
+          ],
+          secretName: p.appName + '-tls'
         }
       ]
     }
