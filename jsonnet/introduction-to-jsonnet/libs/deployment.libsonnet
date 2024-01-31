@@ -25,7 +25,7 @@
           containers: [
             {
               name: p.appName,
-              image: 'somContainerRegistry/' + p.appName + ':' + p.imageTag,
+              image: 'docker.io/kuberdenis/' + p.appName + ':' + p.imageTag,
               ports: [
                 {
                   containerPort: p.port

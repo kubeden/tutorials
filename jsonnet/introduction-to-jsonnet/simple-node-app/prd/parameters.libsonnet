@@ -1,7 +1,7 @@
 {
   appName: 'simple-node-app',
   environment: 'prd',
-  replicas: 3,
+  replicas: 2,
   port: 8080,
   imageTag: 'latest',
 
