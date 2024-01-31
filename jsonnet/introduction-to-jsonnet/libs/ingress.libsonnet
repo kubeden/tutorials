@@ -13,7 +13,7 @@
       ingressClassName: "nginx",
       rules: [
         {
-          host: p.appName + '.denctl.com',
+          host: p.appName + '.' + p.environment + '.denctl.com',
           http: {
             paths: [
               {
@@ -35,7 +35,7 @@
       tls: [
         {
           hosts: [
-            p.appName + '.denctl.com'
+            p.appName + '.' + p.environment + '.denctl.com'
           ],
           secretName: p.appName + '-tls'
         }
