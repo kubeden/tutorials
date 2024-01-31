@@ -6,7 +6,6 @@
   imageTag: 'v1',
 
   env: {
-    NODE_ENV: 'production',
-    PORT: 8080,
+    YOUR_NAME: "Kuberdenis"
   },
 }

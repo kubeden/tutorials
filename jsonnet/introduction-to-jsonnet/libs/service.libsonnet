@@ -32,10 +32,10 @@
       }
     },
     spec: {
-      type: 'ClusterIP',
+      type: 'LoadBalancer',
       ports: [
         {
-          port: p.port,
+          port: 80,
           targetPort: p.port
         }
       ],
