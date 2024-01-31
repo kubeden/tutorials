@@ -6,7 +6,12 @@
       name: p.appName + '-deployment-',
       labels: {
         app: p.appName
-      }
+      } + if std.objectHas(p, 'labels') then
+          std.map(
+            function(key) { name: key, value: std.toString(p.labels[key]) },
+            std.objectFields(p.labels)
+          ) 
+      else [],
     },
     spec: {
       replicas: p.replicas,

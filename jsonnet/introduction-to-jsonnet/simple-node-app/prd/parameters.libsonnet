@@ -9,4 +9,10 @@
   env: {
     YOUR_NAME: "Kuberdenis"
   },
+
+  labels: {
+    app: 'simple-node-app',
+    env: 'prd',
+    exampleLabel: 'exampleValue'
+  },
 }
