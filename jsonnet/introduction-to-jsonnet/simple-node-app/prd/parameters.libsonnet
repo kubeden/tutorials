@@ -11,7 +11,6 @@
   },
 
   labels: {
-    app: 'simple-node-app',
     env: 'prd',
     exampleLabel: 'exampleValue'
   },
