@@ -6,7 +6,7 @@
       name: p.appName + '-deployment-',
       labels: {
         app: p.appName
-      } + if std.objectHas(p, 'labels') then p.labels else {},
+      }
     },
     spec: {
       replicas: p.replicas,
@@ -45,7 +45,7 @@
       name: p.appName + '-deployment',
       labels: {
         app: p.appName
-      }
+      } + if std.objectHas(p, 'labels') then p.labels else {},
     },
     spec: {
       replicas: p.replicas,
