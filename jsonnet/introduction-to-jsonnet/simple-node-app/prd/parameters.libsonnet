@@ -7,7 +7,7 @@
   imageTag: 'v1',
 
   env: {
-    YOUR_NAME: "Kuberdenis"
+    YOUR_NAME: "Kuberdenis (who just updated the environment variable)"
   },
 
   labels: {
