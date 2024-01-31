@@ -64,7 +64,7 @@
           containers: [
             {
               name: p.appName,
-              image: 'docker.io/hello-world' + ':' + p.imageTag,
+              image: 'docker.io/kuberdenis/' + p.appName + ':' + p.imageTag,
               ports: [
                 {
                   containerPort: p.port
