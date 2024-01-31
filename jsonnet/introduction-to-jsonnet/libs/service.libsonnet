@@ -6,12 +6,7 @@
       name: p.appName + '-service',
       labels: {
         app: p.appName
-      } + if std.objectHas(p, 'env') then
-          std.map(
-            function(key) { name: key, value: std.toString(p.env[key]) },
-            std.objectFields(p.env)
-          ) 
-      else [],
+      } + if std.objectHas(p, 'labels') then p.labels else {}
     },
     spec: {
       type: 'ClusterIP',
