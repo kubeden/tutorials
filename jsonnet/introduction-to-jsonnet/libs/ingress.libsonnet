@@ -5,13 +5,14 @@
     metadata: {
       name: p.appName + '-ingress',
       annotations: {
-        'nginx.ingress.kubernetes.io/rewrite-target': '/'
+        'nginx.ingress.kubernetes.io/rewrite-target': '/',
+        'cert-manager.io/cluster-issuer': 'letsencrypt-prod',
       },
     },
     spec: {
       rules: [
         {
-          host: p.appName + p.environment + '.example.com',
+          host: p.appName + p.environment + '.denctl.com',
           http: {
             paths: [
               {

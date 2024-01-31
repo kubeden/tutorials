@@ -35,7 +35,7 @@
       type: 'ClusterIP',
       ports: [
         {
-          port: 80,
+          port: p.port,
           targetPort: p.port
         }
       ],
