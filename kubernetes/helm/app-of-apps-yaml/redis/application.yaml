@@ -10,7 +10,7 @@ spec:
     chart: redis
     helm:
       valueFiles:
-      - values.yaml
+      - values-own.yaml
   destination:
     name: in-cluster
     namespace: redis
