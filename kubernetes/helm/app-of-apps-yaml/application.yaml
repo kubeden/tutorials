@@ -8,8 +8,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: "https://fewpofekwpowef.com"
-    path: "boyankata-app-of-apps"
+    repoURL: "https://github.com/kubeden/tutorials"
+    path: "kubernetes/helm/app-of-apps-yaml"
     targetRevision: HEAD
     directory:
       recurse: true
