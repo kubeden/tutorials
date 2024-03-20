@@ -11,8 +11,6 @@ spec:
     chart: redis
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 16.12.1
-    helm:
-      releaseName: redis
   destination:
     server: "in-cluster"
     namespace: redis
