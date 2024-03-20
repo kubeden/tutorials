@@ -8,9 +8,9 @@ spec:
     repoURL: 'https://charts.bitnami.com/bitnami'
     targetRevision: '16.12.1'
     chart: redis
-    # helm:
-    #   valueFiles:
-    #   - values-2.yaml
+    helm:
+      valueFiles:
+      - values.yaml
   destination:
     name: in-cluster
     namespace: redis
