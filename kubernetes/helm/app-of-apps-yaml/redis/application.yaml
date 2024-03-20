@@ -15,7 +15,7 @@ spec:
       releaseName: redis
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: kubeseal
+    namespace: redis
   syncPolicy:
     automated: {}
     syncOptions:
