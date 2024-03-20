@@ -3,7 +3,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: boyankata-app-of-apps
+  name: boyan-app-of-apps
   namespace: argocd
 spec:
   project: default
