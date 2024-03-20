@@ -1,4 +1,4 @@
-# Introduction to Helm: Parallels to it's less-scary friend APT
+In this short introductory blog post I share a short story of the time I started working with Helm and why it felt horrifying. After that, I jump in drawing the parallels between Helm and APT. I found this way to be quite easy for me to understand how Helm works so I hope it helps you too. Happy reading.
 
 ## The horrors of Helm
 

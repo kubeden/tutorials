@@ -1,0 +1,23 @@
+# this is a kubernetes deployment
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jsonnet-youtube
+  labels:
+    app: jsonnet-youtube
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jsonnet-youtube
+  template:
+    metadata:
+      labels:
+        app: jsonnet-youtube
+    spec:
+      containers:
+      - name: jsonnet-youtube
+        image: gcr.io/kuar-demo/jsonnet-youtube:latest
+        ports:
+        - containerPort: 8080
