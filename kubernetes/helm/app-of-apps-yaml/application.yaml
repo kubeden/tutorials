@@ -1,0 +1,21 @@
+# this is app of apps for the directories redis and mongodb (argocd)
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: boyankata-app-of-apps
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: "https://fewpofekwpowef.com"
+    path: "boyankata-app-of-apps"
+    targetRevision: HEAD
+    recursive: true
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: argocd
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true
