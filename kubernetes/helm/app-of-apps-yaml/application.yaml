@@ -11,7 +11,7 @@ spec:
     repoURL: "https://fewpofekwpowef.com"
     path: "boyankata-app-of-apps"
     targetRevision: HEAD
-    recursive: true
+    recurse: true
   destination:
     server: "https://kubernetes.default.svc"
     namespace: argocd
